@@ -1,0 +1,981 @@
+
+/* ==========================================
+   ALBA FASHION
+   DISEÑO GENERAL
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #FFF9F6;
+    color: #654B42;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+/* ==========================================
+   ENCABEZADO
+========================================== */
+
+.encabezado {
+    width: 100%;
+    background-color: #F3E5DE;
+    text-align: center;
+    padding: 35px 20px 28px;
+}
+
+.encabezado h1 {
+    color: #654B42;
+    font-size: clamp(27px, 3.5vw, 45px);
+    font-weight: 750;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+/* LOGO ORIGINAL */
+
+.logo {
+    display: block;
+    width: 250px;
+    max-width: 75%;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto 15px;
+}
+
+.encabezado p {
+    color: #927671;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+
+/* ==========================================
+   CONTENIDO PRINCIPAL
+========================================== */
+
+main {
+    width: 100%;
+}
+
+
+/* ==========================================
+   BUSCADOR
+========================================== */
+
+.busqueda {
+    width: 100%;
+    padding: 25px 20px 15px;
+}
+
+.buscador-contenedor {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background-color: #FFFFFF;
+    border: 1px solid #E8D3D0;
+    border-radius: 35px;
+    padding: 5px 8px 5px 17px;
+
+    box-shadow: 0 3px 12px rgba(101, 75, 66, 0.05);
+}
+
+.icono-busqueda {
+    color: #B87582;
+    font-size: 25px;
+}
+
+#buscar {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+
+    padding: 11px 5px;
+
+    color: #654B42;
+    font-size: 14px;
+}
+
+#buscar::placeholder {
+    color: #B69B95;
+}
+
+#limpiar-busqueda {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #B87582;
+    color: #FFFFFF;
+
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#limpiar-busqueda:hover {
+    background-color: #925967;
+    transform: scale(1.05);
+}
+
+
+/* ==========================================
+   CATEGORÍAS
+========================================== */
+
+.categorias {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 15px auto 35px;
+    padding: 15px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.categorias h2 {
+    color: #654B42;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.subtitulo {
+    color: #927671;
+    font-size: 14px;
+}
+
+.botones-categorias {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.categoria {
+    border: 1px solid #E8D3D0;
+    background-color: #FFFFFF;
+    color: #765454;
+
+    padding: 11px 22px;
+    border-radius: 30px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.categoria:hover {
+    background-color: #F4E8E2;
+    border-color: #B87582;
+}
+
+.categoria.activa {
+    background-color: #B87582;
+    border-color: #B87582;
+    color: #FFFFFF;
+}
+
+
+/* ==========================================
+   SECCIÓN DE PRODUCTOS
+========================================== */
+
+.productos {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 15px 35px 55px;
+}
+
+.titulo-productos {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.titulo-productos h2 {
+    color: #654B42;
+    font-size: 27px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.titulo-productos .subtitulo {
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   CUADRÍCULA DE PRODUCTOS
+========================================== */
+
+.lista-productos {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 25px;
+
+    width: 100%;
+}
+
+
+/* ==========================================
+   TARJETAS
+========================================== */
+
+.tarjeta {
+    min-width: 0;
+    overflow: hidden;
+
+    background-color: #FFFFFF;
+    border-radius: 16px;
+
+    box-shadow: 0 4px 16px rgba(101, 75, 66, 0.08);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 9px 22px rgba(101, 75, 66, 0.13);
+}
+
+
+/* ==========================================
+   FOTOGRAFÍAS PRINCIPALES
+========================================== */
+
+.foto-producto {
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 3 / 4;
+
+    object-fit: cover;
+
+    background-color: #F4E8E2;
+
+    cursor: pointer;
+
+    transition: transform 0.35s ease;
+}
+
+.foto-producto:hover {
+    transform: scale(1.02);
+}
+
+
+/* ==========================================
+   INFORMACIÓN DE PRODUCTOS
+========================================== */
+
+.info-producto {
+    padding: 17px 16px 19px;
+}
+
+
+/* NOMBRE DEL MODELO */
+
+.nombre-producto {
+    color: #654B42;
+
+    font-size: 21px;
+    font-weight: 700;
+
+    line-height: 1.3;
+
+    margin-bottom: 10px;
+}
+
+
+/* CONTENEDOR DE PRECIOS */
+
+.precios-producto {
+    margin: 8px 0 12px;
+}
+
+
+/* PRECIO POR UNIDAD */
+
+.precio-unidad {
+    color: #B87582;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    margin-bottom: 5px;
+}
+
+
+/* PRECIO POR MAYOR */
+
+.precio-mayor {
+    color: #927671;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 7px;
+}
+
+
+/* TEXTO DE TALLAS */
+
+.texto-tallas {
+    color: #927671;
+
+    font-size: 13px;
+
+    margin-bottom: 8px;
+}
+
+
+/* ==========================================
+   TALLAS DISPONIBLES
+========================================== */
+
+.tallas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.tallas span {
+    display: inline-block;
+
+    border: 1px solid #E8D3D0;
+    background-color: #F9F0ED;
+
+    color: #765454;
+
+    padding: 6px 12px;
+    border-radius: 6px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   PRODUCTOS NO ENCONTRADOS
+========================================== */
+
+.sin-productos {
+    grid-column: 1 / -1;
+
+    text-align: center;
+    padding: 65px 20px;
+
+    color: #927671;
+}
+
+.sin-productos h3 {
+    color: #654B42;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.sin-productos p {
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   VENTANA DE DETALLES
+========================================== */
+
+.modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 2000;
+
+    background-color: rgba(50, 35, 35, 0.75);
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.modal-contenido {
+    position: relative;
+
+    width: 100%;
+    max-width: 780px;
+
+    max-height: 92vh;
+    overflow-y: auto;
+
+    background-color: #FFF9F6;
+
+    padding: 35px;
+    border-radius: 20px;
+
+    text-align: center;
+
+    animation: aparecer 0.3s ease;
+}
+
+
+/* ANIMACIÓN DEL MODAL */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* BOTÓN CERRAR */
+
+.cerrar-modal {
+    position: absolute;
+
+    top: 12px;
+    right: 20px;
+
+    border: none;
+    background: transparent;
+
+    color: #765454;
+    font-size: 35px;
+
+    cursor: pointer;
+}
+
+
+/* NOMBRE DEL PRODUCTO */
+
+#titulo-modal {
+    color: #654B42;
+    font-size: 29px;
+
+    margin: 12px 35px 10px;
+}
+
+
+/* TEXTO DE COLORES */
+
+.texto-modal {
+    color: #927671;
+    font-size: 14px;
+
+    margin: 15px 0;
+}
+
+
+/* ==========================================
+   GALERÍA DE COLORES
+========================================== */
+
+#galeria-colores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 16px;
+    width: 100%;
+}
+
+.foto-color {
+    display: block;
+
+    width: 100%;
+    max-width: 580px;
+
+    height: auto;
+
+    object-fit: contain;
+
+    margin: 0 auto;
+
+    border-radius: 12px;
+}
+
+
+/* PRECIOS DEL MODAL */
+
+#precio-modal {
+    margin: 20px 0 12px;
+}
+
+#precio-modal .precio-unidad {
+    font-size: 17px;
+}
+
+#precio-modal .precio-mayor {
+    font-size: 16px;
+}
+
+
+/* TALLAS DEL MODAL */
+
+.tallas-modal {
+    color: #765454;
+    font-size: 14px;
+
+    margin-bottom: 10px;
+}
+
+
+/* ==========================================
+   WHATSAPP MAYORISTA
+========================================== */
+
+.whatsapp-container {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    z-index: 1500;
+}
+
+.whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 12px 17px;
+
+    background-color: #25D366;
+    color: #FFFFFF;
+
+    border-radius: 35px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18);
+
+    transition: all 0.3s ease;
+}
+
+.whatsapp:hover {
+    background-color: #1DA851;
+    transform: translateY(-3px);
+}
+
+.whatsapp b {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsapp svg {
+    display: block;
+    width: 27px;
+    height: 27px;
+}
+
+
+/* ==========================================
+   PIE DE PÁGINA
+========================================== */
+
+footer {
+    width: 100%;
+
+    background-color: #F3E5DE;
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    color: #765454;
+}
+
+footer h3 {
+    color: #654B42;
+
+    font-size: 22px;
+
+    margin-bottom: 8px;
+}
+
+footer p {
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+footer .derechos {
+    font-size: 11px;
+    color: #A58C84;
+    margin-top: 15px;
+}
+
+
+/* ==========================================
+   LAPTOPS PEQUEÑAS
+========================================== */
+
+@media (max-width: 1150px) {
+
+    .lista-productos {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .productos {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+}
+
+
+/* ==========================================
+   TABLETS
+========================================== */
+
+@media (max-width: 800px) {
+
+    .lista-productos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 17px;
+    }
+
+    .categorias {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .categorias h2 {
+        font-size: 22px;
+    }
+
+    .botones-categorias {
+        width: 100%;
+    }
+
+}
+
+
+/* ==========================================
+   CELULARES
+========================================== */
+
+@media (max-width: 550px) {
+
+    /* ENCABEZADO */
+
+    .encabezado {
+        padding: 27px 12px 22px;
+    }
+
+    .encabezado h1 {
+        font-size: 25px;
+        letter-spacing: 2px;
+        margin-bottom: 17px;
+    }
+
+    .logo {
+        width: 210px;
+        max-width: 75%;
+        margin-bottom: 13px;
+    }
+
+    .encabezado p {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+
+    /* BUSCADOR */
+
+    .busqueda {
+        padding: 20px 12px 10px;
+    }
+
+    .buscador-contenedor {
+        gap: 6px;
+        padding-left: 12px;
+    }
+
+    #buscar {
+        font-size: 12px;
+    }
+
+    #limpiar-busqueda {
+        width: 34px;
+        height: 34px;
+        font-size: 16px;
+    }
+
+
+    /* CATEGORÍAS */
+
+    .categorias {
+        padding: 15px 10px;
+        margin: 8px auto 20px;
+    }
+
+    .categorias h2 {
+        font-size: 19px;
+    }
+
+    .subtitulo {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .botones-categorias {
+        gap: 7px;
+    }
+
+    .categoria {
+        padding: 9px 13px;
+        font-size: 11px;
+    }
+
+
+    /* PRODUCTOS */
+
+    .productos {
+        padding: 12px 12px 40px;
+    }
+
+    .titulo-productos {
+        margin-bottom: 17px;
+        text-align: center;
+    }
+
+    .titulo-productos h2 {
+        font-size: 22px;
+    }
+
+    .titulo-productos .subtitulo {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+
+    /* DOS COLUMNAS */
+
+    .lista-productos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+
+    /* TARJETAS */
+
+    .tarjeta {
+        border-radius: 12px;
+    }
+
+    .tarjeta:hover {
+        transform: none;
+    }
+
+    .foto-producto {
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+    }
+
+    .info-producto {
+        padding: 11px 9px 13px;
+    }
+
+
+    /* NOMBRE */
+
+    .nombre-producto {
+        font-size: 16px;
+        line-height: 1.3;
+        margin-bottom: 7px;
+    }
+
+
+    /* PRECIOS */
+
+    .precios-producto {
+        margin: 6px 0 9px;
+    }
+
+    .precio-unidad {
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+
+    .precio-mayor {
+        font-size: 11px;
+        margin-bottom: 5px;
+    }
+
+
+    /* TALLAS */
+
+    .texto-tallas {
+        font-size: 10px;
+        margin-bottom: 6px;
+    }
+
+    .tallas {
+        gap: 5px;
+    }
+
+    .tallas span {
+        padding: 4px 7px;
+        font-size: 10px;
+    }
+
+
+    /* MODAL */
+
+    .modal {
+        padding: 10px;
+    }
+
+    .modal-contenido {
+        padding: 25px 14px;
+        max-height: 90vh;
+        border-radius: 15px;
+    }
+
+    #titulo-modal {
+        font-size: 22px;
+    }
+
+    .texto-modal {
+        font-size: 12px;
+    }
+
+    #galeria-colores {
+        gap: 10px;
+    }
+
+    .foto-color {
+        max-width: 100%;
+    }
+
+    #precio-modal .precio-unidad,
+    #precio-modal .precio-mayor {
+        font-size: 14px;
+    }
+
+    .tallas-modal {
+        font-size: 12px;
+    }
+
+
+    /* WHATSAPP */
+
+    .whatsapp-container {
+        right: 12px;
+        bottom: 14px;
+    }
+
+    .whatsapp {
+        padding: 10px 13px;
+        gap: 7px;
+        font-size: 12px;
+    }
+
+    .whatsapp svg {
+        width: 23px;
+        height: 23px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 25px 12px;
+    }
+
+    footer h3 {
+        font-size: 19px;
+    }
+
+    footer p {
+        font-size: 11px;
+    }
+
+}
+
+
+/* ==========================================
+   CELULARES MUY PEQUEÑOS
+========================================== */
+
+@media (max-width: 360px) {
+
+    .encabezado h1 {
+        font-size: 21px;
+    }
+
+    .lista-productos {
+        gap: 8px;
+    }
+
+    .info-producto {
+        padding: 9px 7px;
+    }
+
+    .nombre-producto {
+        font-size: 14px;
+    }
+
+    .precio-unidad,
+    .precio-mayor {
+        font-size: 10px;
+    }
+
+    .tallas span {
+        padding: 3px 6px;
+    }
+
+    .categoria {
+        padding: 8px 10px;
+        font-size: 10px;
+    }
+
+}
