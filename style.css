@@ -51,11 +51,11 @@ input {
 
 .logo {
     display: block;
-    width: 250px;
-    max-width: 75%;
+    width: 320px;
+    max-width: 85%;
     height: auto;
     object-fit: contain;
-    margin: 0 auto 15px;
+    margin: 15px auto;
 }
 
 .encabezado p {
@@ -978,4 +978,11 @@ footer .derechos {
         font-size: 10px;
     }
 
+}
+.descripcion-producto {
+    color: #927671;
+    font-size: 12px;
+    line-height: 1.6;
+    margin-top: 12px;
+    font-weight: 400;
 }
